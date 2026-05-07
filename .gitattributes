@@ -1,0 +1,11 @@
+# Normalize line endings for all text files
+* text=auto eol=lf
+
+# Force batch scripts to CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.webp binary
