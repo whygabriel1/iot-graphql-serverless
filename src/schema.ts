@@ -48,4 +48,9 @@ export const typeDefs = `#graphql
     "Returns a single device by its unique ID."
     device(id: ID!): Device
   }
+
+  type Mutation {
+    "Updates a device's status or temperature. Returns the updated device."
+    updateDevice(id: ID!, status: DeviceStatus, temperature: Float): Device
+  }
 `;

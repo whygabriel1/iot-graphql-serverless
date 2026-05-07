@@ -70,3 +70,20 @@ export function findAllDevices(filter?: DeviceFilter): Device[] {
 export function findDeviceById(id: string): Device | null {
   return mockDevices.find((d) => d.id === id) ?? null;
 }
+
+/**
+ * Updates a device's status and/or temperature.
+ *
+ * @param input - Data to update.
+ * @returns The updated Device, or null if not found.
+ */
+export function updateDevice(input: { id: string; status?: DeviceStatus; temperature?: number }): Device | null {
+  const device = mockDevices.find((d) => d.id === input.id);
+  if (!device) return null;
+
+  if (input.status) device.status = input.status;
+  if (input.temperature !== undefined) device.temperature = input.temperature;
+  device.lastUpdated = new Date().toISOString();
+
+  return device;
+}

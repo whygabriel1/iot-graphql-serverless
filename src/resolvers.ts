@@ -10,8 +10,8 @@
  * exactly one query field — nothing more.
  */
 
-import { findAllDevices, findDeviceById } from './repositories/device.repository';
-import { DeviceFilter } from './types/device.types';
+import { findAllDevices, findDeviceById, updateDevice } from './repositories/device.repository';
+import { DeviceFilter, UpdateDeviceInput } from './types/device.types';
 
 /** Shape of the arguments for the `devices` query. */
 interface DevicesArgs {
@@ -51,6 +51,15 @@ export const resolvers = {
      */
     device: (_parent: unknown, args: DeviceArgs) => {
       return findDeviceById(args.id);
+    },
+  },
+
+  Mutation: {
+    /**
+     * Resolver for `updateDevice` — modifies an IoT device.
+     */
+    updateDevice: (_parent: unknown, args: UpdateDeviceInput) => {
+      return updateDevice(args);
     },
   },
 };

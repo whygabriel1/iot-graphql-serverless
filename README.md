@@ -111,6 +111,20 @@ query {
 }
 ```
 
+### Mutaciones (Control de Dispositivo)
+
+```graphql
+mutation {
+  updateDevice(id: "1", status: WARNING, temperature: 45.5) {
+    id
+    name
+    status
+    temperature
+    lastUpdated
+  }
+}
+```
+
 ---
 
 ## Extending the API

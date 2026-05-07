@@ -29,3 +29,10 @@ export interface Device {
 export interface DeviceFilter {
   status?: DeviceStatus;
 }
+
+/** Input for updating a device status/temperature. */
+export interface UpdateDeviceInput {
+  id: string;
+  status?: DeviceStatus;
+  temperature?: number;
+}
