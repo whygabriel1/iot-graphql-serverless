@@ -1,0 +1,10 @@
+services:
+  iot-api:
+    build: .
+    container_name: iot-graphql-server
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - NODE_ENV=production
+    restart: always

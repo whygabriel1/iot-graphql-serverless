@@ -67,6 +67,16 @@ npm run build
 npm start
 ```
 
+### Usando Docker (Recomendado)
+
+Si tienes Docker instalado, puedes levantar el proyecto sin instalar dependencias localmente:
+
+```bash
+docker-compose up --build
+```
+
+El servidor estará disponible en **http://localhost:4000**.
+
 ---
 
 ## Example Queries
