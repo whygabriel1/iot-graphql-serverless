@@ -44,6 +44,7 @@ iot-graphql-serverless/
 ### Prerequisites
 
 - Node.js ≥ 18
+- Static
 - npm ≥ 9
 
 ### Install dependencies
